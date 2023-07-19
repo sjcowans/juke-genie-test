@@ -95,7 +95,7 @@ Rails.application.configure do
     port: 25,
     user_name: 'jukegenie@gmail.com',
     password: 'jvwoeajdpvppyigy',
-    authentication: 'plain'
+    authentication: 'plain',
     enable_starttls_auto: true
     }
 end
