@@ -88,6 +88,9 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.action_mailer.default_url_options = { host: 'https://juke-genie-c3f12435e896.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.smtp_settings = {
