@@ -9,7 +9,7 @@ class PlaylistsController < ApplicationController
       @playlists = playlists_response[:data]
     else
       results = request.location
-      current_location = results.first.data
+      current_location = results.data
       response = GenieService.new(current_location).playlists
       playlists_response = JSON.parse(response.body, symbolize_names: true)
       @playlists = playlists_response[:data]
