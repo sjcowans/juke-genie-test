@@ -57,10 +57,13 @@ class GenieService
     conn.get("/api/v1/users/#{@data}/playlists")
   end
 
-  def playlists
+  def playlists(current_location)
     conn.get('api/v1/playlists') do |req|
-      req.headers = {"CONTENT_TYPE" => "application/json"}
-      req.params = { "lat" => @data["lat"], "lng" => @data["lng"] }
+      req.headers['Content-Type'] = 'application/json'
+      req.body = {
+                      "lat"=> current_location["lat"],
+                      "lng"=> current_location["lon"]
+    }.to_json
     end
   end
 
